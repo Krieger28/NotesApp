@@ -80,7 +80,15 @@ function App() {
   }
 
   function updateTag(id:string, label: string) {
-    setTags(prev => [...[prev, tag]])
+    setTags(prev => {
+      return prev.map(tag=> {
+        if(tag.id === id) {
+          return { ...tag, label }
+        } else {
+          return tag
+        }
+      })
+    })
   }
 
   function deleteTag(id:string) {
@@ -94,7 +102,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<NoteList notes={notesWithTags} availableTags={tags} />}
+          element={<NoteList notes={notesWithTags} availableTags={tags} updateTag={updateTag} deleteTag={deleteTag} />}
         />
         <Route
           path="/new"
