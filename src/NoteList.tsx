@@ -94,7 +94,7 @@ export function NoteList({
           </Col>
           <Col>
             <Form.Group controlId="tags">
-              <Form.Label>Title</Form.Label>
+              <Form.Label>Tags</Form.Label>
               <ReactSelect
                 value={selectedTags.map((tag) => {
                   return { label: tag.label, value: tag.id };
@@ -183,10 +183,19 @@ function EditTagsModal({
             {availableTags.map((tag) => (
               <Row key={tag.id}>
                 <Col>
-                  <Form.Control type="text" value={tag.label} onChange={e => updateTag(tag.id, e.target.value)} />
+                  <Form.Control
+                    type="text"
+                    value={tag.label}
+                    onChange={(e) => updateTag(tag.id, e.target.value)}
+                  />
                 </Col>
                 <Col xs="auto">
-                  <Button onClick={()=> deleteTag(tag.id)} variant="outline-danger">&times;</Button>
+                  <Button
+                    onClick={() => deleteTag(tag.id)}
+                    variant="outline-danger"
+                  >
+                    &times;
+                  </Button>
                 </Col>
               </Row>
             ))}
