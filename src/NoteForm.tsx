@@ -22,7 +22,7 @@ export function NoteForm({
 }: NoteFormProps) {
   const titleRef = useRef<HTMLInputElement>(null);
   const markdownRef = useRef<HTMLTextAreaElement>(null);
-  const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
+  const [selectedTags, setSelectedTags] = useState<Tag[]>(tags);
   const navigate = useNavigate();
 
   function handleSubmit(e: FormEvent) {
@@ -50,7 +50,7 @@ export function NoteForm({
           <Col>
             <Form.Group controlId="tags">
               <Form.Label>Title</Form.Label>
-              <CreatableReactSelect
+              <CreatableReactSelect className={styles.reactSelect}
                 onCreateOption={(label) => {
                   const newTag = { id: uuidV4(), label };
                   onAddTag(newTag);

@@ -43,3 +43,10 @@ transition: translate ease-in-out 100ms, box-shadow ease-in-out 100ms;
     background-color: rgb(0, 0, 0, .4);
     color: white;
 }
+
+.taggs input,
+.taggs textarea {
+    background-color: rgb(0, 0, 179);
+    color: white;
+    
+}
