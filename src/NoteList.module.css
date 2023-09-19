@@ -18,7 +18,7 @@ transition: translate ease-in-out 100ms, box-shadow ease-in-out 100ms;
 .form input:focus,
 .form textarea:focus,
 .modal input:focus {
-    background-color: black;
+    background-color: rgb(46, 45, 45);
     color: white;
     
 }
@@ -31,5 +31,15 @@ transition: translate ease-in-out 100ms, box-shadow ease-in-out 100ms;
 .reactSelect :nth-child(1) div:focus,
 .reactSelect :nth-child(1) div:hover {
     background-color: rgb(61, 58, 58);
+    color: white;
+}
+
+.modal {
+    background-color: rgba(81, 79, 79, 0.4);
+    color: white;
+}
+
+.modal input {
+    background-color: rgb(0, 0, 0, .4);
     color: white;
 }

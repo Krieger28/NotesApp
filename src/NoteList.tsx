@@ -173,7 +173,7 @@ function EditTagsModal({
   updateTag,
 }: EditTagsModalProps) {
   return (
-    <Modal show={show} onHide={handleClose} className={styles.form}>
+    <Modal show={show} onHide={handleClose} className={styles.modal}>
       <Modal.Header>
         <Modal.Title>Edit Tags</Modal.Title>
       </Modal.Header>
