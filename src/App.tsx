@@ -9,6 +9,7 @@ import { NoteList } from "./NoteList";
 import { NoteLayout } from "./NoteLayout";
 import { Note } from "./Note";
 import { EditNote } from "./EditNote";
+import "./App.css"
 
 export type Note = {
   id: string;

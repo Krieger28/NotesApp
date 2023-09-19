@@ -4,6 +4,7 @@ import CreatableReactSelect from "react-select/creatable";
 import { Link, useNavigate } from "react-router-dom";
 import { NoteData, Tag } from "./App";
 import { v4 as uuidV4 } from "uuid";
+import styles from "./NoteList.module.css";
 
 type NoteFormProps = {
   onSubmit: (data: NoteData) => void;
@@ -40,7 +41,7 @@ export function NoteForm({
     <form onSubmit={handleSubmit}>
       <Stack gap={4}>
         <Row>
-          <Col>
+          <Col className={styles.form}>
             <Form.Group controlId="title">
               <Form.Label>Title</Form.Label>
               <Form.Control ref={titleRef} required defaultValue={title} />
@@ -73,7 +74,7 @@ export function NoteForm({
             </Form.Group>
           </Col>
         </Row>
-        <Form.Group controlId="markdown">
+        <Form.Group className={styles.form} controlId="markdown">
           <Form.Label>Body</Form.Label>
           <Form.Control defaultValue={markdown} required as="textarea" ref={markdownRef} rows={15} />
         </Form.Group>

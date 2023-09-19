@@ -82,7 +82,7 @@ export function NoteList({
       </Row>
       <Form>
         <Row className="mb-4">
-          <Col>
+          <Col className={styles.form}>
             <Form.Group controlId="title">
               <Form.Label>Title</Form.Label>
               <Form.Control
@@ -95,7 +95,7 @@ export function NoteList({
           <Col>
             <Form.Group controlId="tags">
               <Form.Label>Tags</Form.Label>
-              <ReactSelect
+              <ReactSelect className={styles.reactSelect}
                 value={selectedTags.map((tag) => {
                   return { label: tag.label, value: tag.id };
                 })}
@@ -173,7 +173,7 @@ function EditTagsModal({
   updateTag,
 }: EditTagsModalProps) {
   return (
-    <Modal show={show} onHide={handleClose}>
+    <Modal show={show} onHide={handleClose} className={styles.form}>
       <Modal.Header>
         <Modal.Title>Edit Tags</Modal.Title>
       </Modal.Header>
