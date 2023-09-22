@@ -9,7 +9,7 @@ import { NoteList } from "./NoteList";
 import { NoteLayout } from "./NoteLayout";
 import { Note } from "./Note";
 import { EditNote } from "./EditNote";
-import "./App.css"
+import "./App.css";
 
 export type Note = {
   id: string;
@@ -80,19 +80,19 @@ function App() {
     setTags((prev) => [...prev, tag]);
   }
 
-  function updateTag(id:string, label: string) {
-    setTags(prev => {
-      return prev.map(tag=> {
-        if(tag.id === id) {
-          return { ...tag, label }
+  function updateTag(id: string, label: string) {
+    setTags((prev) => {
+      return prev.map((tag) => {
+        if (tag.id === id) {
+          return { ...tag, label };
         } else {
-          return tag
+          return tag;
         }
-      })
-    })
+      });
+    });
   }
 
-  function deleteTag(id:string) {
+  function deleteTag(id: string) {
     setTags((prevTags) => {
       return prevTags.filter((tag) => tag.id !== id);
     });
@@ -103,7 +103,14 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<NoteList notes={notesWithTags} availableTags={tags} updateTag={updateTag} deleteTag={deleteTag} />}
+          element={
+            <NoteList
+              notes={notesWithTags}
+              availableTags={tags}
+              updateTag={updateTag}
+              deleteTag={deleteTag}
+            />
+          }
         />
         <Route
           path="/new"
@@ -116,7 +123,7 @@ function App() {
           }
         />
         <Route path="/:id" element={<NoteLayout notes={notesWithTags} />}>
-          <Route index element={<Note onDelete={onDeleteNote}/>} />
+          <Route index element={<Note onDelete={onDeleteNote} />} />
           <Route
             path="edit"
             element={

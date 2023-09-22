@@ -95,7 +95,10 @@ export function NoteList({
           <Col>
             <Form.Group controlId="tags">
               <Form.Label>Tags</Form.Label>
-              <ReactSelect className={styles.reactSelect}
+              <ReactSelect 
+
+        
+
                 value={selectedTags.map((tag) => {
                   return { label: tag.label, value: tag.id };
                 })}
@@ -109,6 +112,7 @@ export function NoteList({
                     })
                   );
                 }}
+                
                 isMulti
               />
             </Form.Group>

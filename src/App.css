@@ -1,10 +1,7 @@
-div {
-    background-color: black;
-}
 
 #root {
     min-height: 100vh;
-    color: white;
+
     width: 100vw;
     padding: 1.7em;
     padding-top: 1em;
