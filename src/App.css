@@ -1,8 +1,17 @@
 
 #root {
     min-height: 100vh;
-
+    background-color: black;
+    color: white;
     width: 100vw;
     padding: 1.7em;
     padding-top: 1em;
 }
+
+div {
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border: rgb(255, 255, 255);
+    /* padding: .125em 0 .175em 0 ; /
+    / border: .1em solid; */
+  }

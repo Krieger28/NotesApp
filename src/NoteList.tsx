@@ -95,10 +95,40 @@ export function NoteList({
           <Col>
             <Form.Group controlId="tags">
               <Form.Label>Tags</Form.Label>
-              <ReactSelect 
-
-        
-
+              <ReactSelect
+                className={styles.reactSelect}
+                styles={{
+                  control: (baseStyles, state) => ({
+                    ...baseStyles,
+                    backgroundColor: "rgb(0, 0, 0) !important",
+                    borderColor: state.isFocused
+                      ? `rgb(0, 98, 177) !important`
+                      : "none",
+                  }),
+                  multiValue: (baseStyles, { data }) => ({
+                    ...baseStyles,
+                    backgroundColor: "rgb(0, 98, 177) !important",
+                    color: "white !important",
+                  }),
+                  menu: (baseStyles) => ({
+                    ...baseStyles,
+                    backgroundColor: "rgb(31, 31, 31) !important",
+                  }),
+                  option: (baseStyles, state) => ({
+                    ...baseStyles,
+                    backgroundColor: state.isFocused
+                      ? `rgb(0, 98, 177) !important`
+                      : "rgb(31, 31, 31) !important",
+                  }),
+                  multiValueRemove: (baseStyles, { data }) => ({
+                    ...baseStyles,
+                    color: "rgb(0, 98, 177)",
+                    ":hover": {
+                      backgroundColor: "red !important",
+                      color: "white",
+                    },
+                  }),
+                }}
                 value={selectedTags.map((tag) => {
                   return { label: tag.label, value: tag.id };
                 })}
@@ -112,7 +142,6 @@ export function NoteList({
                     })
                   );
                 }}
-                
                 isMulti
               />
             </Form.Group>
